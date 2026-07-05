@@ -3,85 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SJ AI</title>
 
-<title>SJ AI TOOLKIT</title>
-
-<style>
-
-body{
-background:#111;
-color:white;
-font-family:Arial,sans-serif;
-text-align:center;
-padding:20px;
-}
-
-h1{
-color:#00ff99;
-}
-
-.card{
-background:#222;
-padding:20px;
-border-radius:15px;
-margin-top:20px;
-}
-
-button{
-width:100%;
-padding:15px;
-margin:10px 0;
-border:none;
-border-radius:10px;
-background:#00b894;
-color:white;
-font-size:18px;
-cursor:pointer;
-}
-
-button:hover{
-background:#009d7f;
-}
-
-footer{
-margin-top:40px;
-color:gray;
-}
-
-</style>
-
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>🚀 SJ AI TOOLKIT</h1>
+<header class="header">
+    <h1>🤖 SJ AI</h1>
+    <p>One AI. Any Language. Any Question.</p>
+</header>
 
-<p>AI Powered Study & Productivity App</p>
+<main class="chat-container">
 
-<div class="card">
+    <div id="chat-box">
+        <div class="ai-message">
+            👋 Hello! I am SJ AI.<br><br>
+            Ask me anything in any language.
+        </div>
+    </div>
 
-<button onclick="alert('Translator Coming Soon')">
-🌍 Multi Language Translator
-</button>
+</main>
 
-<button onclick="window.location.href='study.html'">
-📚 AI Study Assistant
-</button>
+<div class="input-area">
 
-<button onclick="alert('Assignment Writer Coming Soon')">
-✍️ Assignment Writer
-</button>
+<input
+type="text"
+id="user-input"
+placeholder="Ask anything..."
+autocomplete="off">
 
-<button onclick="alert('PDF Maker Coming Soon')">
-📄 PDF Maker
+<button id="send-btn">
+Send
 </button>
 
 </div>
 
-<footer>
-Version 2.0<br>
-Made by SJ
-</footer>
+<script src="script.js"></script>
 
 </body>
     </html>
