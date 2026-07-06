@@ -2,10 +2,18 @@
 const chatBox = document.getElementById("chat-box");
 const input = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
-
+const newChatBtn = document.getElementById("new-chat-btn");
 const API_URL = "https://sj-ai-api.sharan-k-jayan-78.workers.dev";
 
 sendBtn.addEventListener("click", sendMessage);
+newChatBtn.addEventListener("click", () => {
+  chatBox.innerHTML = `
+    <div class="ai-message">
+      👋 Hi! I'm <b>SJ AI</b>.<br><br>
+      How can I help you today?
+    </div>
+  `;
+});
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     sendMessage();
