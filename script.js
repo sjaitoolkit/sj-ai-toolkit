@@ -34,11 +34,22 @@ async function sendMessage() {
       })
     });
 
-    const data = await response.json();
+    if (!response.ok) {
+  throw new Error(`Server Error: ${response.status}`);
+}
 
-    chatBox.innerHTML += `
-      <div class="ai-message">${data.reply || data.message || "No reply"}</div>
-    `;
+const data = await response.json();
+
+const reply =
+  data.reply ||
+  data.message ||
+  "No response from AI.";
+
+chatBox.innerHTML += `
+  <div class="ai-message">${reply}</div>
+`;
+
+chatBox.scrollTop = chatBox.scrollHeight;
 
     chatBox.scrollTop = chatBox.scrollHeight;
 
