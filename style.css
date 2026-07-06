@@ -1,4 +1,4 @@
-*{
+*{y
 margin:0;
 padding:0;
 box-sizing:border-box;
@@ -90,3 +90,44 @@ cursor:pointer;
 #send-btn:hover{
 opacity:.85;
 }
+#new-chat-btn {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 25px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#new-chat-btn:hover {
+  background: #1d4ed8;
+}
+
+.user-message {
+  background: #2563eb;
+  color: white;
+  padding: 12px;
+  border-radius: 15px;
+  margin: 10px 0 10px auto;
+  max-width: 80%;
+  width: fit-content;
+}
+
+.ai-message {
+  background: #2d2d2d;
+  color: white;
+  padding: 12px;
+  border-radius: 15px;
+  margin: 10px 0;
+  max-width: 80%;
+  width: fit-content;
+}
+
+#chat-box {
+  scroll-behavior: smooth;
+  }
