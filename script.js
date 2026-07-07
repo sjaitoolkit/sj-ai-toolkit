@@ -32,6 +32,12 @@ async function sendMessage() {
   input.value = "";
 
   try {
+    const typing = document.createElement("div");
+typing.className = "ai-message";
+typing.id = "typing";
+typing.innerHTML = "✍️ SJ AI is typing...";
+chatBox.appendChild(typing);
+chatBox.scrollTop = chatBox.scrollHeight;
     const response = await fetch(API_URL, {
       method: "POST",
       headers: {
@@ -47,7 +53,8 @@ async function sendMessage() {
 }
 
 const data = await response.json();
-
+document.getElementById("typing")?.remove();
+chatBox.scrollTop = chatBox.scrollHeight;
 const reply =
   data.reply ||
   data.message ||
@@ -62,6 +69,7 @@ chatBox.scrollTop = chatBox.scrollHeight;
     chatBox.scrollTop = chatBox.scrollHeight;
 
   } catch (err) {
+    document.getElementById("typing")?.remove();
     chatBox.innerHTML += `
       <div class="ai-message">❌ ${err.message}</div>
     `;
